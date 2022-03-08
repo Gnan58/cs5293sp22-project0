@@ -1,30 +1,44 @@
 import urllib.request
 import tempfile
-import ssl
 import PyPDF2
 import re
 import sqlite3
 
 
-def getIncidentsData(url):
+def getincidentsdata(url):
     '''
     To open the URL url, and read data.
-    :param url: A string which contains the url of incident summary PDF
-    :return: data from a PDF file
-    :rtype: <class 'bytes'>
+
+    Parameter
+    ----------
+    url : str
+        A string which contains the URL of incident summary report.
+
+    Returns
+    -------
+        Data from a PDF file in bytes
     '''
-    headers = {}
-    headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"                          
-    data = urllib.request.urlopen(urllib.request.Request(url, headers=headers)).read()                                                                               
-    return data
+    if (re.search(r'incident', url)):
+        headers = {}
+        headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
+        data = urllib.request.urlopen(urllib.request.Request(url, headers=headers)).read()
+        return data
+    else:
+        print('Wrong URL! Please provide Incident Summary URL')
 
 
-def extractincidents(data):
+def extractincidentsdata(data):
     '''
-    Extracts data from PDF file and handles the edge cases in each row.
-    :param data: Data in bytes from a PDF file
-    :return: Each element in a row as a string in list
-    :rtype: list
+    Extracts each row from a PDF file and handles all the edge cases in a file.
+
+    Parameter
+    ---------
+    data : bytes
+        Data in bytes from a PDF file
+
+    Return
+    ------
+        Each element in a row as a string in list
     '''
     rowsList = []
     tempFile = tempfile.TemporaryFile()
@@ -35,11 +49,11 @@ def extractincidents(data):
     for pageNumber in range(0, pagecount):
         page = pdfReader.getPage(pageNumber).extractText().split("\n")
         if pageNumber == 0:
-            page = cleanFirstPage(page)
+            page = cleanfirstpage(page)
         elif pageNumber == pagecount - 1:
-            page = cleanLastPage(page)
+            page = cleanlastpage(page)
         else:
-            page = cleanOtherPages(page)
+            page = cleanotherpages(page)
         for data in page:
             rowsList.append(data)
     cleanedData = clean(rowsList)
@@ -60,7 +74,19 @@ def incidentORICheck(st):
         return 0
 
 
-def cleanFirstPage(page):
+def cleanfirstpage(page):
+    """
+    Removes headings, column names and whitespace character present in first page of PDF.
+
+    Parameters
+    -----------
+    page : list
+        A list of Strings which is each element in a PDF page.
+
+    Returns
+    -------
+        List without headings, column names and whitespace characters.
+    """
     ide = [
         i
         for i, item in enumerate(page)
@@ -72,11 +98,35 @@ def cleanFirstPage(page):
     return page[ide[0] : -3]
 
 
-def cleanOtherPages(page):
+def cleanotherpages(page):
+    """
+    Removes last item in a list
+
+    Parameters
+    -----------
+    page : list
+        A list of Strings which is each element in a PDF page.
+
+    Returns
+    -------
+        A List
+    """
     return page[0:-1]
 
 
-def cleanLastPage(page):
+def cleanlastpage(page):
+    """
+    Removes last two items in a list
+
+    Parameters
+    -----------
+    page : list
+        A list of Strings which is each element in a PDF page.
+
+    Returns
+    -------
+        A List
+    """
     return page[0:-2]
 
 

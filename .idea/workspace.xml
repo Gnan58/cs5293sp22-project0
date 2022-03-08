@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4f4707b-dca0-4efc-bfe7-7b6fce4baf6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/test_get_incidents_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COLLABORATORS" beforeDir="false" afterPath="$PROJECT_DIR$/COLLABORATORS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project0/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/project0/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project0/project0.py" beforeDir="false" afterPath="$PROJECT_DIR$/project0/project0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_cleanFirstPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_clean_first_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_cleanOtherPages.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_clean_other_pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_clean_last_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_clean_last_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_extractincidents.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_extract_incidents_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_getIncidentsData.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25yYqQppZmLQ9yUXrLtsBzt4Bbk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kolla\OneDrive\Desktop\cs5293sp22-project0\docs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_get_incidents_data">
+    <configuration name="Python tests for test_clean.test_clean" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="cs5293sp22-project0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_clean.test_clean&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_createdb.test_createdb" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="cs5293sp22-project0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_createdb.test_createdb&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_populatedb.test_populatedb" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="cs5293sp22-project0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_populatedb.test_populatedb&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_status.test_status" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="cs5293sp22-project0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_status.test_status&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_get_incidents_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="cs5293sp22-project0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_get_incidents_data&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in C:/Users/kolla/OneDrive/Desktop/cs5293sp22-project0/tests/test_fetchincidents.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="cs5293sp22-project0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\kolla\.virtualenvs\cs5293sp22-project0-RnxyY-BG\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_fetchincidents.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.Python tests for test_clean.test_clean" />
+      <item itemvalue="Python tests.Python tests for test_createdb.test_createdb" />
+      <item itemvalue="Python tests.Python tests for test_populatedb.test_populatedb" />
+      <item itemvalue="Python tests.Python tests for test_status.test_status" />
+      <item itemvalue="Python tests.pytest in C:/Users/kolla/OneDrive/Desktop/cs5293sp22-project0/tests/test_fetchincidents.py" />
+      <item itemvalue="Python tests.Python tests for tests.test_get_incidents_data" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for tests.test_get_incidents_data" />
+        <item itemvalue="Python tests.Python tests for test_status.test_status" />
+        <item itemvalue="Python tests.Python tests for test_createdb.test_createdb" />
+        <item itemvalue="Python tests.Python tests for test_populatedb.test_populatedb" />
+        <item itemvalue="Python tests.Python tests for test_clean.test_clean" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4f4707b-dca0-4efc-bfe7-7b6fce4baf6e" name="Changes" comment="" />
+      <created>1646501060051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646501060051</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/project0/project0.py</url>
+          <line>133</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/project0/project0.py</url>
+          <line>196</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/project0/project0.py</url>
+          <line>200</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -4,8 +4,8 @@ import project0
 
 
 def main(url):
-    data = project0.getIncidentsData(url)
-    incidentsRows = project0.extractincidents(data)
+    data = project0.getincidentsdata(url)
+    incidentsRows = project0.extractincidentsdata(data)
     connection = project0.createdb()
     project0.populatedb(connection, incidentsRows)
     project0.status(connection)
