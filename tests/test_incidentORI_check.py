@@ -7,4 +7,4 @@ import pytest
                                                 (['2/6/2022 23:22', '2022-00006619', '1544 OK-9', 'Assist Fire', '0140200'], 0)])
 
 def test_incidentORICheck(incidentORI, index):
-    assert project0.incidentORICheck(incidentORI) == index
+    assert project0.incidentORIcheck(incidentORI) == index

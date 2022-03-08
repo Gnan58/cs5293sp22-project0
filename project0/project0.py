@@ -41,10 +41,10 @@ def extractincidentsdata(data):
         Each element in a row as a string in list
     '''
     rowsList = []
-    tempFile = tempfile.TemporaryFile()
-    tempFile.write(data)
-    tempFile.seek(0)
-    pdfReader = PyPDF2.pdf.PdfFileReader(tempFile)
+    fp = tempfile.TemporaryFile()
+    fp.write(data)
+    fp.seek(0)
+    pdfReader = PyPDF2.pdf.PdfFileReader(fp)
     pagecount = pdfReader.getNumPages()
     for pageNumber in range(0, pagecount):
         page = pdfReader.getPage(pageNumber).extractText().split("\n")
@@ -60,7 +60,18 @@ def extractincidentsdata(data):
     return cleanedData
 
 
-def incidentORICheck(st):
+def incidentORIcheck(st):
+    """
+    Search a regular expression pattern with in a string
+
+    Parameter
+    ---------
+    st : list
+        A partition list to find index of Location ORI
+    Returns
+    -------
+        Index of matched string in a list, o if not matched
+    """
     index = [
         i
         for i, item in enumerate(st)
@@ -131,8 +142,24 @@ def cleanlastpage(page):
 
 
 def clean(rowsList):
+    """
+    Handles edge cases of each row in a PDF file
+
+    When column 4 i.e Nature value in PDF is not present,this function inserts "Unknown Nature" value for that column.
+
+    When column 3 i.e Location value is split into multiple blocks, this function appends them.
+
+    Parameter
+    ---------
+    rowsList : list
+        A list of strings which is each element from all pages in a PDF file.
+
+    Returns
+    -------
+        A list with all rows in a PDF file.
+    """
     partitionList = []
-    finalArray = []
+    finalList = []
     pointer = 0
     count = 0
     while pointer < len(rowsList):
@@ -140,7 +167,7 @@ def clean(rowsList):
             partitionList.append(rowsList[pointer])
             count += 1
             pointer += 1
-        searchIndex = incidentORICheck(partitionList)
+        searchIndex = incidentORIcheck(partitionList)
         if count == 5 and searchIndex == 0:
             tempList = []
             for i in range(0, 2):
@@ -152,36 +179,43 @@ def clean(rowsList):
             pointer += 1
             partitionList = tempList
         if count == 5 or pointer == len(rowsList):
-            searchIndex = incidentORICheck(partitionList)
+            searchIndex = incidentORIcheck(partitionList)
             if searchIndex == 4:
                 for i in range(0, searchIndex + 1):
-                    finalArray.append(partitionList[i])
+                    finalList.append(partitionList[i])
                 count = 0
                 partitionList = []
             elif searchIndex == 3:
                 for i in range(0, searchIndex):
-                    finalArray.append(partitionList[i])
+                    finalList.append(partitionList[i])
                 noUnknownValues = 4 - searchIndex
                 for times in range(0, noUnknownValues):
-                    finalArray.append("Unknown Nature")
-                finalArray.append(partitionList[searchIndex])
+                    finalList.append("Unknown")
+                finalList.append(partitionList[searchIndex])
                 pointer -= noUnknownValues
                 count = 0
                 partitionList = []
             elif searchIndex == 2:
                 for i in range(0, searchIndex):
-                    finalArray.append(partitionList[i])
+                    finalList.append(partitionList[i])
                 noUnknownValues = 4 - searchIndex
                 for times in range(0, noUnknownValues):
-                    finalArray.append("Unknown Nature")
-                finalArray.append(partitionList[searchIndex])
+                    finalList.append("Unknown")
+                finalList.append(partitionList[searchIndex])
                 pointer -= noUnknownValues
                 count = 0
                 partitionList = []
-    return finalArray
+    return finalList
 
 
 def createdb():
+    """
+    Creates an SQLite database file and inserts table .
+
+    Returns
+    -------
+        connection object
+    """
     con = sqlite3.connect("normanpd.db")
     cur = con.cursor()
     cur.execute("DROP TABLE IF EXISTS incidents")
@@ -198,6 +232,15 @@ def createdb():
 
 
 def populatedb(con, incidents):
+    """
+        Inserts incidents data into database
+
+    Parameter
+    ---------
+    con : connection object
+    incidents : list
+        list of incident rows from PDF file
+    """
     cur = con.cursor()
     lst_tuple = [x for x in zip(*[iter(incidents)] * 5)]
     cur.executemany("INSERT INTO incidents VALUES (?, ?, ?, ?, ?)", lst_tuple)
@@ -205,6 +248,14 @@ def populatedb(con, incidents):
 
 
 def status(con):
+    """
+        prints the nature of incidents and no of times it occur from incidents table
+
+    Parameter
+    ----------
+    con : connection object
+
+    """
     cur = con.cursor()
     rows = cur.execute(
         "SELECT nature, count(*)  FROM incidents group by nature order by count(*) DESC , nature ASC"
