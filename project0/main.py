@@ -4,6 +4,13 @@ import project0
 
 
 def main(url):
+    """
+    Takes URL from command line and prints nature and its no of occurances from an incident summary report.
+
+    Parameter
+    ---------
+    url : str
+    """
     data = project0.getincidentsdata(url)
     incidentsRows = project0.extractincidentsdata(data)
     connection = project0.createdb()

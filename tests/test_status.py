@@ -1,7 +1,8 @@
-import project0.project0 as project0
+import sqlite3
 
 import pytest
-import sqlite3
+
+import project0.project0 as project0
 
 @pytest.fixture
 def setup_database():

@@ -1,11 +1,18 @@
-# Gnaneswar Kolla
+## Gnaneswar Kolla
 
+## Project Title
+---
+### CS5293,Spring 2022 Project 0
+
+## Project Description
+---
+This project takes url of incident summary report from Norman Police department, extracts data from PDF file and inserts data into database and getting unique nature of incidents sorted by total number of incidents and alphabetically by the nature.
 
 ## Installation/Getting Started
 ---
 1. Pipenv to create and manage virtual environment for the project.     
     > pipenv install
-2. [Packages](#packages) required to run this project can be installed using below commands.
+2. [Packages](#packages) required to run this project are kept in **requirements.txt** file which automatically installs during installation of pipenv in step 1.
     > PyPDF2==1.26.0
 
     > pytest==7.0.1
@@ -13,6 +20,8 @@
     > pipenv run python project0/main.py --incidents URL
 
     **URL** must only be a daily incident summary report from [Norman Police Department Activity](https://www.normanok.gov/public-safety/police-department/crime-prevention-data/department-activity-reports) for this project.
+4. Pytests can be runnable using below command
+    > pipenv run python -m pytest
 
 ## Packages
 ---
@@ -38,11 +47,11 @@
         - Extensible library for opening URLs 
 
 2. `extractincidentsdata(data)` This function takes data from a PDF file, extracts incidents and handles all the edge cases encountered in each row to return a list of rows.
-    - Created a temporary file using `tempfile` module and write the bytes object data into that file.
+    - Create a temporary file using `tempfile` module and write the bytes object data into that file.
         - tempfile module is used to create temporary files and directories.
     - Then `PyPDF2` package is used to perform operations on temporary file.
         - pdfReader object is used to get each page and extract text using extractText() method and splitting it with new line character to return each page data into a list.
-        - Then if the page number is 1, it calls cleanfirstpage() method to clean data in first page and rest of the pages goes into  cleanotherpages() method and last page to cleanlastpage() method.
+        - Then if the page number is 1, it calls cleanfirstpage() method to clean data in first page and rest of the pages goes into  cleanotherpages() method and last page to cleanlastpage() method.(more details about these functions are present below)
         - Once all pages data is appended to one list , the execution calls clean() method to handle all the edge cases in each row of a file and returns list of rows to insert data into database. 
 3. `cleanfirstpage(page)` This function takes a page i.e a list of strings which is each element present in a first page and returns after cleaning the page data.
     - Cleaning here refers to taking only data from rows and excluding any headings, column names and whitespace character found in a page.

@@ -1,9 +1,9 @@
-import urllib.request
-import tempfile
-import PyPDF2
 import re
 import sqlite3
+import tempfile
+import urllib.request
 
+import PyPDF2
 
 def getincidentsdata(url):
     '''

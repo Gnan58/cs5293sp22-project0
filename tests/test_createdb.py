@@ -1,5 +1,6 @@
-import pytest
 import sqlite3
+
+import pytest
 
 import project0.project0 as project0
 

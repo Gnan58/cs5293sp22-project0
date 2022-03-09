@@ -1,5 +1,6 @@
-import project0.project0 as project0
 import pytest
+
+import project0.project0 as project0
 
 @pytest.mark.parametrize("incidentORI, index", [(['2/6/2022 0:22', '2022-00002355', '3737 W MAIN ST', 'Assault EMS Needed', 'EMSSTAT'], 4),
                                                 (['2/6/2022 23:22', '2022-00006619', '1544 OK-9', 'OK0140200', 'Assist Fire'], 3),
